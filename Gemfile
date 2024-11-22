@@ -29,6 +29,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'hirb', '~> 0.7.3'
 gem 'materialize-sass', '~> 1.0.0'
 gem 'material_icons' 
+gem 'jquery-rails'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
