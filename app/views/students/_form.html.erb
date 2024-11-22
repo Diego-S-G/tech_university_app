@@ -1,11 +1,19 @@
 <% if @student.errors.any? %>
-  <div id="error_explanation">
-    <h2>Esta ação não pôde ser executada por causa de <%= pluralize(@student.errors.count, "erro") %>:</h2>
-    <ul>
-      <% @student.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-    </ul>
+  <div class="container">
+    <div class="row" style="padding-top: 30px">
+      <div class="col s12 m12 l12">
+        <div class="card-panel red lighten-2">
+          <span class="white-text">
+            <strong>Esta ação não pôde ser executada por causa de <%= pluralize(@student.errors.count, "erro") %>:</strong>
+            <ul>
+              <% @student.errors.full_messages.each do |message| %>
+                <li>- <%= message %></li>
+              <% end %>
+            </ul>
+          </span>
+        </div>
+      </div>
+    </div>
   </div>
 <% end %>
 
