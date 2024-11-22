@@ -1,3 +1,14 @@
+<% if @student.errors.any? %>
+  <div id="error_explanation">
+    <h2>Esta ação não pôde ser executada por causa de <%= pluralize(@student.errors.count, "erro") %>:</h2>
+    <ul>
+      <% @student.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <div class="container">
   <div class="row-center" style="padding-top: 30px">
     <div class="col s12 m12 l12">
@@ -5,32 +16,18 @@
         <h3 class="center-align"><%= @student.new_record? ? "Criar Conta" : "Editar Perfil" %></h3>
         <div class="row">
           <%= form_for(@student, html: {class: "col s12"}) do |form| %>
-            <% if student.errors.any? %>
-              <div id="error_explanation">
-                <h2><%= pluralize(student.errors.count, "error") %> prohibited this student from being saved:</h2>
-
-                <ul>
-                <% student.errors.full_messages.each do |message| %>
-                  <li><%= message %></li>
-                <% end %>
-                </ul>
-              </div>
-            <% end %>
-
             <div class="row">
               <div class="input-field col s12">
                 <%= form.text_field :name, placeholder: 'Insira seu nome aqui', autofocus: true %>
                 <%= form.label :name, 'Nome' %>
               </div>
             </div>
-
             <div class="row">
               <div class="input-field col s12">
                 <%= form.email_field :email, placeholder: 'Insira seu e-mail aqui', autofocus: true %>
                 <%= form.label :email, 'E-mail' %>
               </div>
             </div>
-
             <div class="row">
               <div class="input-field col s12">
                 <%= form.submit(@student.new_record? ? "Inscrever-se" : "Atualizar informações", class: "btn orange waves-effect waves-light right") %>

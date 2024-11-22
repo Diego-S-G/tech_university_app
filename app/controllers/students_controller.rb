@@ -23,14 +23,12 @@ class StudentsController < ApplicationController
   def create
     @student = Student.new(student_params)
 
-    respond_to do |format|
-      if @student.save
-        format.html { redirect_to @student, notice: "Student was successfully created." }
-        format.json { render :show, status: :created, location: @student }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @student.errors, status: :unprocessable_entity }
-      end
+    if @student.save
+      # session[:user_id] = @student.id
+      flash[:success] = "Bem-vindo(a) à Tech University, #{@student.name}!"
+      redirect_to root_path
+    else
+      render "new"
     end
   end
 
