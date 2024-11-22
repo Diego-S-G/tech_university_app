@@ -5,11 +5,12 @@
 </div>
 
 <div class="row">
+  <% @courses.each do |course| %>
     <div class="col s6 m6">
       <div class="card blue-grey darken-1">
-        <div class="card-content white-text">
-          <span class="card-title">RS10: Introduzindo Rails 10</span>
-          <p>rails 10 acabou de sair!!! Por que vc deve parar de usar o 3 e mudar pro 10.</p>
+        <div class="card-content white-text conteudo-curso">
+          <span class="card-title"><%= course.short_name.truncate(5) %>: <%= course.name.truncate(25) %></span>
+          <p><%= course.description.truncate(150) %></p>
         </div>
         <div class="card-action">
           <a href="#">Quero me matricular</a>
@@ -17,16 +18,5 @@
         </div>
       </div>
     </div>
-     <div class="col s6 m6">
-      <div class="card blue-grey darken-1">
-        <div class="card-content white-text">
-          <span class="card-title">Ang40: Curso de Angular v40</span>
-          <p>OMG angular ta imparavel wth?! Após o lançamento da v18, após 1 semana v40 chega para a comunidade Angular! Pera...De 18 pra 40? Como assim? Inscreva-se no curso para saber mais ;)</p>
-        </div>
-        <div class="card-action">
-          <a href="#">Quero me matricular</a>
-          <a href="#">Informações</a>
-        </div>
-      </div>
-    </div>
+  <% end %>  
 </div>
