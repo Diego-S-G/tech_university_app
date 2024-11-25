@@ -11,6 +11,27 @@
 // about supported directives.
 //
 //= require rails-ujs
+//= require jquery
+//= require materialize
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+$(document).on('turbolinks:load', function() {
+    // Re-inicializar os dropdowns
+    $(".dropdown-trigger").dropdown({
+        coverTrigger: false
+    });
+
+    // Re-inicializar a sidenav
+    $('.sidenav').sidenav();
+
+    // Elementos de fade-out
+    $('#fade-out-target').fadeOut(4000);
+});
+
+$(document).on('turbolinks:before-cache', function() {
+    // Destruir instâncias antes de Turbolinks trocar de página
+    $('.sidenav').sidenav('destroy');
+    $('.dropdown-trigger').dropdown('destroy');
+});

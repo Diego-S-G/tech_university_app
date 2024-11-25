@@ -1,0 +1,22 @@
+<div class="row">
+    <div class="col s12">
+        <h3 class="center-align">Cursos</h3>
+    </div>
+</div>
+
+<div class="row">
+  <% @courses.each do |course| %>
+    <div class="col s6 m6">
+      <div class="card blue-grey darken-1">
+        <div class="card-content white-text conteudo-card">
+          <span class="card-title"><%= course.short_name.truncate(5) %>: <%= course.name.truncate(25) %></span>
+          <p><%= course.description.truncate(150) %></p>
+        </div>
+        <div class="card-action">
+          <%= link_to 'Quero me matricular', course_enroll_path(course_id: course.id), method: :post if logged_in? && !(current_user.courses.include?(course)) %>
+          <%= link_to 'Informações', course_path(course) %>
+        </div>
+      </div>
+    </div>
+  <% end %>  
+</div>

@@ -1,0 +1,18 @@
+<% if obj.errors.any? %>
+  <div class="container">
+    <div class="row">
+      <div class="col s12 m12 l12">
+        <div class="card-panel red lighten-2">
+          <span class="white-text">
+            <strong>Esta ação não pôde ser executada por causa de <%= pluralize(obj.errors.count, "erro") %>:</strong>
+            <ul>
+              <% obj.errors.full_messages.each do |message| %>
+                <li>- <%= message %></li>
+              <% end %>
+            </ul>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

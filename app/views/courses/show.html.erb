@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="col s12">
+    <h3>Curso</h3>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col s6 m6">
+    <div class="card blue-grey darken-1">
+      <div class="card-content white-text">
+        <span class="card-title">Código: <%= @course.short_name %></span>
+        <p>Nome: <%= @course.name %></p>
+        <p style="margin-top: 30px;">Descrição: <%= @course.description %></p>
+      </div>
+    </div>
+    <%= link_to 'Quero me matricular', course_enroll_path(course_id: @course.id), method: :post, class: "waves-effect waves-light btn" if logged_in? && !(current_user.courses.include?(@course)) %>
+    <%= link_to 'Deixar de acompanhar', delete_student_course_path(course_id: @course), method: :delete, class: "waves-effect waves-light btn" if current_user.courses.include?(@course)%>
+  </div>
+</div>

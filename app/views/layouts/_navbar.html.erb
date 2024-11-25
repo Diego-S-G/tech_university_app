@@ -1,0 +1,28 @@
+<ul id="dropdown1" class="dropdown-content">
+  <li><%= another_session_link %></li>
+  <li><%= session_link %></li>
+</ul>
+<ul id="dropdown2" class="dropdown-content">
+  <li><%= another_session_link %></li>
+  <li><%= session_link %></li>
+</ul>
+<ul class="sidenav" id="mobile-demo">
+  <li><%= link_to 'Cursos', root_path %></li>
+  <li><%= link_to 'Matrículas', students_path if logged_in? %></li>
+  <li><a class="dropdown-trigger" href="#!" data-target="dropdown2">Conta<i class="material-icons right">arrow_drop_down</i></a></li>
+</ul>
+
+
+<nav>
+  <div class="container">
+    <div class="nav-wrapper">
+      <%= link_to 'Tech University', root_path, class: "brand-logo right" %>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul id="nav-mobile" class="left hide-on-med-and-down">
+        <li><%= link_to 'Cursos', root_path %></li>
+        <li><%= link_to 'Matrículas', students_path if logged_in? %></li>
+        <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Conta<i class="material-icons right">arrow_drop_down</i></a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
