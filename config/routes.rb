@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  # resources :student_courses
   resources :students, except: [ :destroy ]
   # resources :courses
   root 'courses#index'
