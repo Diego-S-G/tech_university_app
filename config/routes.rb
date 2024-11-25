@@ -1,13 +1,15 @@
 Rails.application.routes.draw do
-  # resources :student_courses
   resources :students, except: [ :destroy ]
-  # resources :courses
+
+  resources :courses, except: [ :index ]
   root 'courses#index'
-  get 'courses/new', to: 'courses#new'
   
   get 'about', to: 'pages#about'
 
   get 'login', to: 'logins#new'
   post 'login', to: 'logins#create'
   delete 'logout', to: 'logins#destroy'
+
+  post 'course_enroll', to: 'student_courses#create'
+  delete 'delete_student_course', to: 'student_courses#destroy'
 end

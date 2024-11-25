@@ -8,12 +8,23 @@
   <% @students.each do |student| %>
     <div class="col s6 m6">
       <div class="card blue-grey darken-1">
-        <div class="card-content white-text conteudo-curso">
+        <div class="card-content white-text conteudo-card">
           <span class="card-title">Nome: <%= student.name.truncate(35) %></span>
           <% if student == current_user %>
             <p>Email: <%= student.email.truncate(25) %></p>
           <% end %>  
-          <p>Cursos matriculados</p>
+          <p style="margin-top: 15px; margin-bottom: -18px;">
+          Cursos matriculados: 
+          <% if student.courses.empty? %>
+            <br>Nenhum no momento...
+          <% else %>
+            <ul>
+              <% student.courses.each do |course| %>
+                <li>- <%= course.name %></li>
+              <% end %>
+            </ul>
+          <% end %>
+        </p>
         </div>
         <div class="card-action">
           <%= link_to 'Ver Perfil', student_path(student) %>
