@@ -26,7 +26,7 @@ class StudentsController < ApplicationController
     if @student.save
       # session[:user_id] = @student.id
       flash[:notice] = "Bem-vindo(a) à Tech University, #{@student.name}!"
-      redirect_to root_path
+      redirect_to @student
     else
       render "new"
     end
