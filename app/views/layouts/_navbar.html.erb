@@ -1,30 +1,32 @@
 <ul id="dropdown1" class="dropdown-content">
-  <li><%= session_link %></li> 
-  <li><a href="#!">two</a></li>
+  <li><%= another_session_link %></li>
+  <li><%= session_link %></li>
   <li class="divider"></li>
   <li><a href="#!">three</a></li>
 </ul>
 <ul id="dropdown2" class="dropdown-content">
-  <li><%= session_link %></li> 
-  <li><a href="#!">two</a></li>
+  <li><%= another_session_link %></li>
+  <li><%= session_link %></li>
   <li class="divider"></li>
   <li><a href="#!">three</a></li>
 </ul>
+<ul class="sidenav" id="mobile-demo">
+  <li><%= link_to 'Cursos', root_path %></li>
+  <li><%= link_to 'Matrículas', students_path if logged_in? %></li>
+  <li><a class="dropdown-trigger" href="#!" data-target="dropdown2">Conta<i class="material-icons right">arrow_drop_down</i></a></li>
+</ul>
+
+
 <nav>
   <div class="container">
     <div class="nav-wrapper">
-      <a href="#" class="brand-logo right">Tech University</a>
+      <%= link_to 'Tech University', root_path, class: "brand-logo right" %>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul id="nav-mobile" class="left hide-on-med-and-down">
-        <li><a href="#">Cursos</a></li>
-        <li><a href="#">Matrículas</a></li>
+        <li><%= link_to 'Cursos', root_path %></li>
+        <li><%= link_to 'Matrículas', students_path if logged_in? %></li>
         <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Conta<i class="material-icons right">arrow_drop_down</i></a></li>
       </ul>
     </div>
   </div>
 </nav>
-<ul class="sidenav" id="mobile-demo">
-    <li><a href="#">Cursos</a></li>
-    <li><a href="#">Matrículas</a></li>
-    <li><a class="dropdown-trigger" href="#!" data-target="dropdown2">Conta<i class="material-icons right">arrow_drop_down</i></a></li>
-</ul>

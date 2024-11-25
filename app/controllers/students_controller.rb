@@ -1,5 +1,7 @@
 class StudentsController < ApplicationController
+  skip_before_action :require_user, only: [ :new, :create ]
   before_action :set_student, only: %i[ show edit update destroy ]
+  before_action :require_same_user, only: [ :edit, :update ]
 
   # GET /students or /students.json
   def index
@@ -12,7 +14,12 @@ class StudentsController < ApplicationController
 
   # GET /students/new
   def new
-    @student = Student.new
+    if !logged_in?
+      @student = Student.new
+    else
+      flash[:alert] = "Você já está logado!"
+      redirect_to student_path(current_user)
+    end
   end
 
   # GET /students/1/edit
@@ -61,5 +68,12 @@ class StudentsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def student_params
       params.require(:student).permit(:name, :email, :password, :password_confirmation)
+    end
+
+    def require_same_user
+      if current_user != @student
+        flash[:alert] = "Você não é este usuário para fazer isto!"
+        redirect_to @student
+      end
     end
 end
