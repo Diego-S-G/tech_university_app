@@ -1,7 +1,7 @@
 # Tech University App
 <br/>
 
-Este é um dos projetos que fiz acompanhando o [curso do Mashrur Hossain na Udemy](https://www.udemy.com/course/the-complete-ruby-on-rails-developer-course) na minha trilha de aprendizado de Ruby e Rails.
+Este é um dos projetos que fiz acompanhando o [curso do Mashrur Hossain na Udemy](https://www.udemy.com/course/the-complete-ruby-on-rails-developer-course), na minha trilha de aprendizado de Ruby e Rails.
 <br/>
 
 O Tech University App é uma aplicação onde os usuários, nesse caso estudantes, podem visualizar e se matricular em cursos da área de programação, além de poder ver outros estudantes e quais cursos eles estão matriculados no momento.
