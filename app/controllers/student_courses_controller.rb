@@ -14,7 +14,7 @@ class StudentCoursesController < ApplicationController
   end
 
   def destroy
-    student_course = StudentCourse.find_by(course: params[:course_id])
+    student_course = StudentCourse.find_by(course: params[:course_id], student: current_user)
     
     student_course.destroy
     flash[:notice] = "Você saiu do curso #{student_course.course.name} :("
