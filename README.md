@@ -1,24 +1,21 @@
-# README
+# Tech University App
+<br/>
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Este é um dos projetos que fiz acompanhando o [curso do Mashrur Hossain na Udemy](https://www.udemy.com/course/the-complete-ruby-on-rails-developer-course) na minha trilha de aprendizado de Ruby e Rails.
+<br/>
 
-Things you may want to cover:
+O Tech University App é uma aplicação onde os usuários, nesse caso estudantes, podem visualizar e se matricular em cursos da área de programação, além de poder ver outros estudantes e quais cursos eles estão matriculados no momento.
+<br/>
 
-* Ruby version
+Este projeto foi feito usando Ruby 2.5.8 e Rails 5.2.1 **(favor ler Problemas Conhecidos)**.
+<br/>
 
-* System dependencies
+## Funcionamento:
+https://github.com/user-attachments/assets/32535429-aa42-4b2f-8746-4cee9c899926
 
-* Configuration
+<br/>
+<br/>
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Problemas Conhecidos: 
+Esse projeto foi feito quando estava no início do aprendizado de Ruby, então ao criar o projeto sem perceber o criei usando ruby 3.3.5 e versões mais recentes do node/npm(não sei se isso afetou em si), então o projeto veio sem alguns arquivos que tive que colocar na mão(boot.rb e database.yml por exemplo) e talvez algumas funcionalidades comprometidas(nesse projeto nada interferiu como em outros mas é algo que vale apontar);
+<br/>
